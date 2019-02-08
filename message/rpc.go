@@ -141,7 +141,7 @@ func (r *MessageRPC) DelGroup(key string, ret *int) error {
 }
 */
 
-// Server Ping interface
+// Ping; Server Ping interface
 func (r *MessageRPC) Ping(p int, ret *int) error {
 	log.Debug("ping ok")
 	return nil

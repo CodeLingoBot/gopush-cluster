@@ -74,7 +74,7 @@ func Create(conn *zk.Conn, fpath string) error {
 	return nil
 }
 
-// RegisterTmp create a ephemeral node, and watch it, if node droped then send a SIGQUIT to self.
+// RegisterTemp; create a ephemeral node, and watch it, if node droped then send a SIGQUIT to self.
 func RegisterTemp(conn *zk.Conn, fpath string, data []byte) error {
 	tpath, err := conn.Create(path.Join(fpath)+"/", data, zk.FlagEphemeral|zk.FlagSequence, zk.WorldACL(zk.PermAll))
 	if err != nil {

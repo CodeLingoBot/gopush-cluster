@@ -149,7 +149,7 @@ func tcpListen(bind string) {
 	}
 }
 
-// hanleTCPConn handle a long live tcp connection.
+// handleTCPConn; handle a long live tcp connection.
 func handleTCPConn(conn net.Conn, rc chan *bufio.Reader) {
 	addr := conn.RemoteAddr().String()
 	log.Debug("<%s> handleTcpConn routine start", addr)

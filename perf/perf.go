@@ -22,7 +22,7 @@ import (
 	"net/http/pprof"
 )
 
-// StartPprof start http pprof.
+// Init; start http pprof.
 func Init(pprofBind []string) {
 	pprofServeMux := http.NewServeMux()
 	pprofServeMux.HandleFunc("/debug/pprof/", pprof.Index)

@@ -57,7 +57,7 @@ type Config struct {
 	ZookeeperPath    string        `goconf:"zookeeper:path"`
 }
 
-// NewConfig parse config file into Config.
+// InitConfig; parse config file into Config.
 func InitConfig() error {
 	gconf := goconf.New()
 	if err := gconf.Parse(confFile); err != nil {

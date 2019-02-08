@@ -37,7 +37,7 @@ type Ketama struct {
 	nodesMapping map[uint]string // nodes maping
 }
 
-// New create a ketama consistent hashing struct
+// NewKetama; New create a ketama consistent hashing struct
 func NewKetama(node, vnode int) *Ketama {
 	ketama := &Ketama{}
 	ketama.node = node
@@ -50,7 +50,7 @@ func NewKetama(node, vnode int) *Ketama {
 	return ketama
 }
 
-// New create a ketama consistent hashing struct use exist node slice
+// NewKetama2; New create a ketama consistent hashing struct use exist node slice
 func NewKetama2(node []string, vnode int) *Ketama {
 	ketama := &Ketama{}
 	ketama.node = len(node)
@@ -63,7 +63,7 @@ func NewKetama2(node []string, vnode int) *Ketama {
 	return ketama
 }
 
-// init consistent hashing circle
+// initCircle; consistent hashing circle
 func (k *Ketama) initCircle() {
 	h := NewMurmur3C()
 	for idx := 1; idx < k.node+1; idx++ {
@@ -81,7 +81,7 @@ func (k *Ketama) initCircle() {
 	sort.Sort(UIntSlice(k.nodes))
 }
 
-// init consistent hashing circle
+// initCircle2; consistent hashing circle
 func (k *Ketama) initCircle2(node []string) {
 	h := NewMurmur3C()
 	for _, str := range node {
@@ -114,7 +114,7 @@ func (k *Ketama) Node(key string) string {
 	return k.nodesMapping[pos]
 }
 
-// search the slice left-most value
+// searchLeft; the slice left-most value
 func searchLeft(a []uint, x uint) int {
 	lo := 0
 	hi := len(a)

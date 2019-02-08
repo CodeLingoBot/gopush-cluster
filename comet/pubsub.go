@@ -53,7 +53,7 @@ var (
 	NodeReply = []byte("-n\r\n")
 )
 
-// StartListen start accept client.
+// StartComet starts accept client.
 func StartComet() error {
 	for _, proto := range Conf.Proto {
 		if proto == WebsocketProtoStr {

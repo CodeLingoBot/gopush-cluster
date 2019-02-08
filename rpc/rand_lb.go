@@ -98,7 +98,7 @@ func NewRandLB(clients map[string]*WeightRpc, service string, retry, ping time.D
 	return r, nil
 }
 
-// initRand init the rpc weight rand.
+// initWeightRand; init the rpc weight rand.
 func (r *RandLB) initWeightRand() {
 	if len(r.Clients) == 0 {
 		return

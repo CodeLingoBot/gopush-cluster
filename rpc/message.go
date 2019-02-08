@@ -188,7 +188,7 @@ func watchMessageRoot(conn *zk.Conn, fpath string, ch chan *MessageNodeEvent) er
 	}
 }
 
-// handleNodeEvent add and remove MessageRPC.Clients, copy the src map to a new map then replace the variable.
+// handleMessageNodeEvent; add and remove MessageRPC.Clients, copy the src map to a new map then replace the variable.
 func handleMessageNodeEvent(conn *zk.Conn, retry, ping time.Duration, ch chan *MessageNodeEvent) {
 	for {
 		ev := <-ch

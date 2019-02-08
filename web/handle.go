@@ -47,7 +47,7 @@ func getProtoAddr(node *myrpc.CometNodeInfo, p string) (addrs []string, ret int)
 	return
 }
 
-// GetServer handle for server get
+// GetServer0; handle for server get
 func GetServer0(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "Method Not Allowed", 405)
@@ -78,7 +78,7 @@ func GetServer0(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-// GetOfflineMsg get offline mesage http handler.
+// GetOfflineMsg0 gets offline mesage http handler.
 func GetOfflineMsg0(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "Method Not Allowed", 405)
@@ -132,7 +132,7 @@ func GetOfflineMsg0(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-// GetTime get server time http handler.
+// GetTime0 gets server time http handler.
 func GetTime0(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "Method Not Allowed", 405)

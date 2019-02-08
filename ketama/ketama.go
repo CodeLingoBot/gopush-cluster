@@ -59,7 +59,7 @@ func NewRing(n int) (h *HashRing) {
 	return
 }
 
-// Adds a new node to a hash ring
+// AddNode adds a new node to a hash ring
 // n: name of the server
 // s: multiplier for default number of ticks (useful when one cache node has more resources, like RAM, than another)
 func (h *HashRing) AddNode(n string, s int) {

@@ -50,7 +50,7 @@ func (l *KeepAliveListener) Accept() (c net.Conn, err error) {
 	return
 }
 
-// StartHttp start http listen.
+// StartWebsocket starts http listen.
 func StartWebsocket() error {
 	for _, bind := range Conf.WebsocketBind {
 		log.Info("start websocket listen addr:\"%s\"", bind)
@@ -82,7 +82,7 @@ func websocketListen(bind string) {
 	}
 }
 
-// Subscriber Handle is the websocket handle for sub request.
+// SubscribeHandle; Subscriber Handle is the websocket handle for sub request.
 func SubscribeHandle(ws *websocket.Conn) {
 	addr := ws.Request().RemoteAddr
 	params := ws.Request().URL.Query()

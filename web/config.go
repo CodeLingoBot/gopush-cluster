@@ -28,7 +28,7 @@ var (
 	confFile string
 )
 
-// InitConfig initialize config file path
+// init; initialize config file path
 func init() {
 	flag.StringVar(&confFile, "c", "./web.conf", " set web config file path")
 }

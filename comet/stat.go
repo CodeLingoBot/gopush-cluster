@@ -122,7 +122,7 @@ func statListen(bind string) {
 	}
 }
 
-// start stats, called at process start
+// StartStats; stats, called at process start
 func StartStats() {
 	startTime = time.Now().UnixNano()
 	for _, bind := range Conf.StatBind {
@@ -131,7 +131,7 @@ func StartStats() {
 	}
 }
 
-// memory stats
+// MemStats; memory stats
 func MemStats() []byte {
 	m := &runtime.MemStats{}
 	runtime.ReadMemStats(m)
@@ -170,7 +170,7 @@ func MemStats() []byte {
 	return jsonRes(res)
 }
 
-// golang stats
+// GoStats; golang stats
 func GoStats() []byte {
 	res := map[string]interface{}{}
 	res["compiler"] = runtime.Compiler
@@ -184,7 +184,7 @@ func GoStats() []byte {
 	return jsonRes(res)
 }
 
-// server stats
+// ServerStats; stats
 func ServerStats() []byte {
 	res := map[string]interface{}{}
 	res["uptime"] = time.Now().UnixNano() - startTime
@@ -206,7 +206,7 @@ func ServerStats() []byte {
 	return jsonRes(res)
 }
 
-// configuration info
+// ConfigInfo; configuration info
 func ConfigInfo() []byte {
 	byteJson, err := json.MarshalIndent(Conf, "", "    ")
 	if err != nil {

@@ -129,7 +129,7 @@ func fmix64(h uint64) uint64 {
 	return h
 }
 
-// MurmurHash3 for x86, 32-bit (MurmurHash3_x86_32)
+// Murmur3A; for x86, 32-bit (MurmurHash3_x86_32)
 func Murmur3A(key []byte, seed uint32) uint32 {
 	nblocks := len(key) / 4
 	var h1 = seed
@@ -176,7 +176,7 @@ func Murmur3A(key []byte, seed uint32) uint32 {
 	return h1
 }
 
-// MurmurHash3 for x86, 128-bit (MurmurHash3_x86_128)
+// Murmur3C; for x86, 128-bit (MurmurHash3_x86_128)
 func Murmur3C(key []byte, seed uint32) [4]uint32 {
 	nblocks := len(key) / 16
 	var h1 = seed
@@ -330,7 +330,7 @@ func Murmur3C(key []byte, seed uint32) [4]uint32 {
 	return [4]uint32{h1, h2, h3, h4}
 }
 
-// MurmurHash3 for x64, 128-bit (MurmurHash3_x64_128)
+// Murmur3F; for x64, 128-bit (MurmurHash3_x64_128)
 func Murmur3F(key []byte, seed uint64) [2]uint64 {
 	nblocks := len(key) / 16
 	var h1 = seed

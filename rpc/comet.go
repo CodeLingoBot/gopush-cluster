@@ -210,7 +210,7 @@ func handleCometNodeEvent(conn *zk.Conn, migrateLockPath, fpath string, retry, p
 	}
 }
 
-// notify every Comet node to migrate
+// notifyMigrate; every Comet node to migrate
 func notifyMigrate(conn *zk.Conn, migrateLockPath, znode, key string, update bool, nodeWeightMap map[string]int) (err error) {
 	// try lock
 	if _, err = conn.Create(migrateLockPath, []byte("1"), zk.FlagEphemeral, zk.WorldACL(zk.PermAll)); err != nil {
@@ -266,7 +266,7 @@ func notifyMigrate(conn *zk.Conn, migrateLockPath, znode, key string, update boo
 	return
 }
 
-// watchNode watch a named node for leader selection when failover
+// watchCometNode; watch a named node for leader selection when failover
 func watchCometNode(conn *zk.Conn, node, fpath string, retry, ping time.Duration, ch chan *CometNodeEvent) {
 	fpath = path.Join(fpath, node)
 	for {

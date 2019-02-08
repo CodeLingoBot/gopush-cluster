@@ -44,7 +44,7 @@ type SeqChannel struct {
 	token *Token
 }
 
-// New a user seq stored message channel.
+// NewSeqChannel; New a user seq stored message channel.
 func NewSeqChannel() *SeqChannel {
 	ch := &SeqChannel{
 		mutex: &sync.Mutex{},

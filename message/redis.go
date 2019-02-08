@@ -54,7 +54,7 @@ type RedisStorage struct {
 	delCH chan *RedisDelMessage
 }
 
-// NewRedis initialize the redis pool and consistency hash ring.
+// NewRedisStorage; initialize the redis pool and consistency hash ring.
 func NewRedisStorage() *RedisStorage {
 	redisPool := map[string]*redis.Pool{}
 	ring := ketama.NewRing(ketamaBase)
@@ -291,7 +291,7 @@ func (s *RedisStorage) DelPrivate(key string) error {
 	return nil
 }
 
-// DelMulti implements the Storage DelMulti method.
+// clean implements the Storage DelMulti method.
 func (s *RedisStorage) clean() {
 	for {
 		info := <-s.delCH
